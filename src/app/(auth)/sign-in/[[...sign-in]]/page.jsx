@@ -62,15 +62,9 @@ export default function Page() {
             </div>
 
             <div className="mb-6 flex flex-col gap-4">
-              <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl ml-3">
                 Sign in to your account
               </h1>
-              <p className="text-muted-foreground">
-                Don't have an account?{" "}
-                <a href="#" className="font-semibold text-blue-600">
-                  Sign up here
-                </a>
-              </p>
             </div>
 
             {/* Add your sign-in form or component here */}
