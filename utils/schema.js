@@ -1,13 +1,24 @@
-import { serial, varchar, text } from "drizzle-orm/pg-core";
-import { pgTable } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, varchar } from "drizzle-orm/pg-core";
 
-export const mockup = pgTable('mockUP', {
-    id: serial('id').primaryKey(),
-    jsonMockResp: text('jsonMockResp', { length: 20 }).notNull(),
-    jobPosition: varchar('jobPosition', { length: 20 }).notNull(),
-    jobDesc: varchar('jobDesc', { length: 20 }).notNull(),
-    jobExperience: varchar('jobExperience', { length: 20 }).notNull(),
-    createdBy: varchar('createdBy', { length: 20 }).notNull(),
-    createdAt: varchar('createdAt', { length: 20 }).notNull(),
-    mockId: varchar('mockId', { length: 20 }).notNull()
-});
+export const MockInterview=pgTable('MockInterview',{
+    id:serial('id').primaryKey(),
+    jsonMockResp:text('jsonMockResp').notNull(),
+    jobPosition:varchar('jobPosition').notNull(),
+    jobDesc:varchar('jobDesc').notNull(),
+    jobExperience:varchar('jobExperience').notNull(),
+    createdBy:varchar('createdBy').notNull(),
+    createdAt:varchar('createdAt'),
+    mockId:varchar('mockId').notNull()
+})
+
+export const UserAnswer = pgTable('userAnswer',{
+    id:serial('id').primaryKey(),
+    mockIdRef:varchar('mockId').notNull(),
+    question:varchar('question').notNull(),
+    correctAns:text('correctAns'),
+    userAns:text('userAns'),
+    feedback:text('feedback'),
+    rating:varchar('rating'),
+    userEmail:varchar('userEmail'),
+    createdAt:varchar('createdAt')
+})
